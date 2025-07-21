@@ -1,145 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
 }
 
-
-body{
-    font-family: 'inter',
-    sans-serif;
-    min-height: 100vh;
-    background: hsl(233, 47%, 7%);
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-
+:root {
+     --White: hsl(0, 100%, 100%);
+     --Purple-100: hsl(275, 100%, 97%);
+     --Purple-600: hsl(292, 16%, 49%);
+     --Purple-950: hsl(292, 42%, 14%);
 }
 
-.container{
-    max-width: 1020px;
-    margin: 0 auto;
+body {
+     font-family: "Work Sans", sans-serif;
+     background-color: var(--Purple-100);
+     background-image: url("assets/images/background-pattern-desktop.svg");
+     background-repeat: no-repeat;
+     background-position: top;
+     background-size: contain;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
 }
 
-.wrapper{
-    background-color: hsl(244, 38%, 16%);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 2rem;
-    
+.accordion-card {
+     background: var(--White);
+     max-width: 600px;
+     padding: 1.5rem;
+     border-radius: 10px;
 }
 
-.img-component{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.accordion-card-header {
+     display: flex;
+     gap: 1rem;
+     align-items: center;
 }
 
-.img-component{
-    position: relative;
+.accordion-card-header h1 {
+     font-size: 3rem;
+     margin-bottom: 1rem;
 }
 
-.img-component::after{
-    position: absolute;
-    content: '';
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: hsl(277, 64%, 61%);
-    opacity: .6;
-
+.accordion {
+     width: 100%;
 }
 
-.text-component{
-    padding: 13%;
+.accordion-item {
+     margin-bottom: 1rem;
+     border-bottom: 0.5px solid rgba(128, 128, 128, 0.131);
 }
 
-.title{
-    color: hsl(0, 0%, 100%);
-    font-weight: 700;
-    padding-bottom: 22px;
+.accordion-header {
+     width: 100%;
+     font-size: 0.9rem;
+     padding: 1rem 0;
+     border: none;
+     cursor: pointer;
+     background-color: transparent;
+     font-weight: 900;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
 }
 
-.title span{
-    color: hsl(277, 64%, 61%);
-    
+.accordion-header:hover {
+     color: var(--Purple-600);
 }
 
-.subtitle{
-    color: hsl(0, 0%,100%, 0.75);
-    line-height: 1.8;
+.accordion-content {
+     max-height: 0;
+     overflow: hidden;
+     color: var(--Purple-600);
+     transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-.stat-box{
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    padding-top: 60px;
+.accordion-item.active .accordion-content {
+     max-height: fit-content;
+     margin-bottom: 1rem;
 }
 
-.stat-box p.num{
-    color: hsl(0, 0%, 100%);
-    font-size: 25px;
-    font-weight: 700px;
-    margin-bottom: 7px;
-    font-weight: bold;
+/* Tablet screens (<= 768px) */
+@media (max-width: 768px) {
+     .accordion-card {
+          padding: 1.2rem;
+          max-width: 90%;
+     }
 
+     .accordion-card-header h1 {
+          font-size: 2.2rem;
+     }
+
+     .accordion-header {
+          font-size: 0.95rem;
+     }
 }
 
-.stat-box p {
-    color: hsl(0, 0%, 100%, .6);
+/* Mobile screens (<= 480px) */
+@media (max-width: 480px) {
+     body {
+          background-image: url("assets/images/background-pattern-mobile.svg");
+     }
 
-}
+     .accordion-card {
+          padding: 1rem;
+          border-radius: 8px;
+     }
 
-@media only screen and (max-width: 768px) and (min-width: 426px){
-    body{
-        font-size: 12px;
-    }
-    .text-component{
-        padding: 12%;
-    }
-    .title{
-        font-size: 22px;
-    }
-    .stat-box{
-        padding-top: 10px;
-    }
-    .stat-box p num{
-        font-size: 17px;
-    }
+     .accordion-card-header h1 {
+          font-size: 1.8rem;
+     }
 
-}
+     .accordion-header {
+          font-size: 0.85rem;
+          flex-wrap: nowrap;
+          gap: 0.5rem;
+     }
 
-@media only screen and (max-width: 425px){
-    body{
-        text-align: center;
-    }
-    .wrapper{
-        grid-template-columns: 1fr;
-    }
-    .img-component{
-        order: -1;
-    }
-    .text-component{
-        padding: 12% 8%;
-    }
-    .title{
-        font-size: 23px;
-        line-height: 1.4;
-    }
-    .stat-box{
-        flex-direction: column;
-        padding-top: 30%;
-    }
-    .stat-box div {
-        margin-top: 20px;
+     .accordion-header img {
+          width: 18px;
+          height: 18px;
+     }
 
-    }
-
-
+     .accordion-content {
+          font-size: 0.85rem;
+     }
 }

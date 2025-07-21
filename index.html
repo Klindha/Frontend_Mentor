@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Stats preview card component</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ accordion</title>
   <link rel="stylesheet" href="style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
-</head>
 <body>
-  <div class="container">
-    <div class="wrapper">
-      <div class="text-component">
-        <h1 class="title">Get <span>insights</span> that help your business grow.</h1>
-        <p class="subtitle">Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-           experience, and overall efficiency.</p>
-          <div class="stat-box">
-            <div>
-              <p class="num"> 10k+ </p>
-              <p> companies</p>
-            </div>
-            <div>
-              <p class="num">  314 </p>
-              <p> templates</p>
-            </div>
-            <div>
-              <p class="num"> 12m+ </p>
-              <p> queries</p>
-            </div>
-          </div>
+  <div class="accordion-card">
+    <div class="accordion-card-header">
+      <img src="assets/images/icon-star.svg" alt="icon-star">
+      <h1> FAQs</h1>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">What is Frontend Mentor, and how will it help me? <img
+            src="assets/images/icon-plus.svg" alt=""></button>
+        <div class="accordion-content" open> Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.</div>
       </div>
 
-
-      <div class="img-component">
-        <img src="image-header-desktop.jpg" alt="">
+      <div class="accordion-item">
+        <button class="accordion-header"> Is Frontend Mentor free?<img src="assets/images/icon-plus.svg"
+            alt=""></button>
+        <div class="accordion-content"> Yes, Frontend Mentor offers both free and premium coding challenges, with the
+          free
+          option providing access to a range of projects suitable for all skill levels.
+        </div>
       </div>
-      
+
+      <div class="accordion-item">
+        <button class="accordion-header"> Can I use Frontend Mentor projects in my portfolio?<img
+            src="assets/images/icon-plus.svg" alt=""></button>
+        <div class="accordion-content"> Yes, you can use projects completed on Frontend Mentor in your portfolio. It's
+          an excellent
+          way to showcase your skills to potential employers!
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">How can I get help if I'm stuck on a Frontend Mentor challenge?<img
+            src="assets/images/icon-plus.svg" alt=""></button>
+        <div class="accordion-content"> The best place to get help is inside Frontend Mentor's Discord community.
+          There's a help
+          channel where you can ask questions and seek support from other community members.
+        </div>
+      </div>
     </div>
   </div>
-<!-- <div class="imgcomp">
-  <img src="images/favicon-32x32.png" alt="">
-</div> -->
-
-
-   
-
-  
+  <script src="script.js"></script>
 </body>
+
 </html>
